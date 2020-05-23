@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,110 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ColorSetting" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="G0P-5u-EOL">
+                                <rect key="frame" x="16" y="64" width="382" height="347"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tDu-ea-OsS">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="167"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wN9-7s-P2u">
+                                        <rect key="frame" x="0.0" y="196" width="382" height="31"/>
+                                        <subviews>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BRL-1p-0XZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="132" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="132" id="3M5-cd-5sC"/>
+                                                </constraints>
+                                                <segments>
+                                                    <segment title="First"/>
+                                                    <segment title="Second"/>
+                                                </segments>
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            </segmentedControl>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3.5" minValue="0.0" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="JbJ-b6-hz4">
+                                                <rect key="frame" x="130" y="0.0" width="254" height="32"/>
+                                                <connections>
+                                                    <action selector="redValueSetting" destination="BYZ-38-t0r" eventType="valueChanged" id="FXs-gM-C56"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZu-r2-Vcn">
+                                        <rect key="frame" x="0.0" y="256" width="382" height="31"/>
+                                        <subviews>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8UF-tQ-WH0">
+                                                <rect key="frame" x="0.0" y="0.0" width="131" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="131" id="IUm-AF-9NL"/>
+                                                </constraints>
+                                                <segments>
+                                                    <segment title="First"/>
+                                                    <segment title="Second"/>
+                                                </segments>
+                                            </segmentedControl>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4.5" minValue="0.0" maxValue="11" translatesAutoresizingMaskIntoConstraints="NO" id="4OT-tc-S2l">
+                                                <rect key="frame" x="129" y="0.0" width="255" height="32"/>
+                                                <connections>
+                                                    <action selector="greenValueSetting" destination="BYZ-38-t0r" eventType="valueChanged" id="DBR-HY-jPr"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="joX-ao-4he">
+                                        <rect key="frame" x="0.0" y="316" width="382" height="31"/>
+                                        <subviews>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9Kh-sg-ZO4">
+                                                <rect key="frame" x="0.0" y="0.0" width="131" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="131" id="dDQ-KU-Jvb"/>
+                                                </constraints>
+                                                <segments>
+                                                    <segment title="First"/>
+                                                    <segment title="Second"/>
+                                                </segments>
+                                            </segmentedControl>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="uuQ-Ul-AeM">
+                                                <rect key="frame" x="129" y="0.0" width="255" height="32"/>
+                                                <connections>
+                                                    <action selector="blueValueSetting" destination="BYZ-38-t0r" eventType="valueChanged" id="v6o-ch-Oy3"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="tDu-ea-OsS" secondAttribute="height" multiplier="361:158" id="l3F-q4-8NO"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.29842148103956168" blue="0.61929242227979275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="G0P-5u-EOL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="6CE-4W-gzH"/>
+                            <constraint firstItem="G0P-5u-EOL" firstAttribute="width" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="365:818" id="JFm-Bo-U0H"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G0P-5u-EOL" secondAttribute="trailing" constant="16" id="jBG-yA-CWs"/>
+                            <constraint firstItem="G0P-5u-EOL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="jVw-SZ-RH5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="blueSlider" destination="uuQ-Ul-AeM" id="pSh-qg-dx6"/>
+                        <outlet property="greenSlider" destination="4OT-tc-S2l" id="xuf-F6-KrF"/>
+                        <outlet property="redSlider" destination="JbJ-b6-hz4" id="gMc-n4-vLb"/>
+                        <outlet property="segmentControkForBlue" destination="9Kh-sg-ZO4" id="LE7-5Z-1DN"/>
+                        <outlet property="segmentControlForGreen" destination="8UF-tQ-WH0" id="BdI-hy-w6y"/>
+                        <outlet property="segmentControlForRed" destination="BRL-1p-0XZ" id="i0g-df-nCA"/>
+                        <outlet property="viewSetColor" destination="tDu-ea-OsS" id="262-Qm-i2K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-57.971014492753625" y="133.92857142857142"/>
         </scene>
     </scenes>
 </document>
