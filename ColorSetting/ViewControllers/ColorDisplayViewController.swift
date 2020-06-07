@@ -24,10 +24,9 @@ class ColorDisplayViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let kazachekForVC = segue.destination as! ColorSettingsViewController
         kazachekForVC.delegate = self
-        let senderColor = segue.destination as! ColorSettingsViewController
-        senderColor.redColor = red
-        senderColor.greenColor = green
-        senderColor.blueColor = blue
+        kazachekForVC.redColor = red
+        kazachekForVC.greenColor = green
+        kazachekForVC.blueColor = blue
     }
 }
 
